@@ -1,0 +1,151 @@
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  cursor: none;
+}
+
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 10;
+}
+
+.start-screen {
+  background: rgba(255, 107, 107, 0.95);
+}
+
+.game-over-screen {
+  background: rgba(255, 217, 61, 0.95);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.instructions {
+  font-size: 1.2em;
+  margin: 20px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 1.5em;
+  background: white;
+  color: #ff6b6b;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  margin: 10px;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em;
+  color: #ff6b6b;
+  font-weight: bold;
+  z-index: 5;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+}
+
+.timer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2em;
+  color: #ff6b6b;
+  font-weight: bold;
+  z-index: 5;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.final-score {
+  font-size: 2.5em;
+  margin: 20px 0;
+  color: #ff6b6b;
+  text-align: center;
+}
+
+.basket {
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 80px;
+  font-size: 4em;
+  z-index: 5;
+  pointer-events: none;
+  transition: left 0.05s linear;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.falling-item {
+  position: absolute;
+  font-size: 40px;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 800px) {
+  .game-container {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .instructions {
+    font-size: 1em;
+  }
+
+  .btn {
+    font-size: 1.2em;
+    padding: 12px 30px;
+  }
+
+  .score,
+  .timer {
+    font-size: 1.5em;
+  }
+
+  .basket {
+    font-size: 3em;
+  }
+}
