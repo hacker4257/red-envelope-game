@@ -113,6 +113,11 @@ function App() {
             // 碰撞发生
             if (item.isBomb) {
               setScore((s) => Math.max(0, s - 5))
+              setTimeLeft((t) => {
+                const next = Math.max(0, t - 5)
+                if (next === 0) setGameState('gameOver')
+                return next
+              })
             } else {
               setScore((s) => s + 10)
             }
@@ -154,7 +159,7 @@ function App() {
           <div className="instructions">
             🎮 移动鼠标接住掉落的红包<br />
             💰 红包 +10分<br />
-            💣 炸弹 -5分<br />
+            💣 炸弹 -5分，-5秒<br />
             ⏰ 60秒内尽可能多得分！
           </div>
           <button className="btn" onClick={startGame}>
